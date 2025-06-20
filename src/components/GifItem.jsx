@@ -1,6 +1,7 @@
 // 1-. Importaciones de React
 
 // 2-. Importaciones de Tercero
+import PropTypes from 'prop-types';
 
 // 3-. Importacion de nuestro codigo
 
@@ -13,5 +14,10 @@ export const GifItem =( { title , url } ) => {
     )
    
 }
+
+GifItem.propTypes = {
+    title: PropTypes.string.isRequired,
+    url: PropTypes.string.isRequired,
+};
 
 export default GifItem

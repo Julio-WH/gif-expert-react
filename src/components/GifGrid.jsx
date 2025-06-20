@@ -1,14 +1,15 @@
 // 1-. Importaciones de React
 
 // 2-. Importaciones de Tercero
+import PropTypes from 'prop-types';
 
 // 3-. Importacion de nuestro codigo
 import GifItem from "./GifItem";
-import { userFetchGifs } from "../hooks/userFetchGifs";
+import { useFetchGifs } from "../hooks/userFetchGifs";
 
 export const GifGrid =({ category }) => {
                 
-    const { images, isLoading } = userFetchGifs( category );
+    const { images, isLoading } = useFetchGifs( category );
 
     /* Se convertio a customHook
 
@@ -46,6 +47,10 @@ export const GifGrid =({ category }) => {
             </div>
         </>
     )
+}
+
+GifGrid.propTypes = {
+    category: PropTypes.string.isRequired,
 }
 
 export default GifGrid

@@ -1,6 +1,12 @@
+// 1-. Importaciones de React
 import { useState } from 'react'
 
-export const AddCategory = ({ onNewCategory }) => {
+// 2-. Importaciones de Tercero
+import PropTypes from 'prop-types';
+
+// 3-. Importacion de nuestro codigo
+
+export const AddCategory = ( { onNewCategory } ) => {
 
     const [inputValue, setInputValue] = useState('')
 
@@ -10,16 +16,16 @@ export const AddCategory = ({ onNewCategory }) => {
 
     const onSubmit = (e) =>{
         e.preventDefault();
-        console.log('inputValue', inputValue);
-        if ( inputValue.trim().length <= 1) return;
+        if ( inputValue.trim().length <= 1 ) return;
         // setCategories(categories =>[inputValue, ...categories]);
-        setInputValue('');
+        
         onNewCategory( inputValue.trim() );
+        setInputValue('');
         
     }
 
     return (
-        <form onSubmit={ onSubmit }>
+        <form onSubmit={ onSubmit } aria-label='form'>
             <input 
                 type="text"
                 placeholder="Buscar gifss"
@@ -29,6 +35,10 @@ export const AddCategory = ({ onNewCategory }) => {
         </form>
         
     )
+}
+
+AddCategory.propTypes = {
+    onNewCategory: PropTypes.func.isRequired,
 }
 
 export default AddCategory

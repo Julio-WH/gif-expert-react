@@ -20,6 +20,7 @@ export const GifExpertApp = () => {
             <h1>GifExpertApp</h1>
             <AddCategory 
                 onNewCategory = { (value) => onAddCategory(value)}
+                name = {"Julioooo"}
             />
             
             <ol>

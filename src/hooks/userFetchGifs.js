@@ -8,7 +8,7 @@ import getGifs from "../helpers/getGifs";
 // 3-. Importacion de nuestro codigo
 
 
-export const userFetchGifs = ( category ) => {
+export const useFetchGifs = ( category ) => {
 
     const [images, setImages] = useState([]);
     const [isLoading, setIsLoading] = useState( true );
